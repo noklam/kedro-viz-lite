@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "kedro-viz-lite"
+  site-url: "https://noklam.github.io/kedro-viz-lite"
+  description: "Run kedro-viz in a notebook without a full Kedro Project."
+  repo-branch: main
+  repo-url: "https://github.com/noklam/kedro-viz-lite"
