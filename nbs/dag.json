@@ -1,0 +1,325 @@
+{
+  "nodes": [
+    {
+      "id": "28e0515d",
+      "name": "make_monthly_predictions",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "feb"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "9000ffea",
+      "name": "feb.input_data",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feb"
+      ],
+      "layer": null,
+      "dataset_type": "io.memory_dataset.MemoryDataSet",
+      "stats": null
+    },
+    {
+      "id": "bcbc1f66",
+      "name": "feb.output_data",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "feb"
+      ],
+      "layer": null,
+      "dataset_type": "io.memory_dataset.MemoryDataSet",
+      "stats": null
+    },
+    {
+      "id": "df6a1647",
+      "name": "make_monthly_predictions",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "jan"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "0ce7b0b7",
+      "name": "jan.input_data",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "jan"
+      ],
+      "layer": null,
+      "dataset_type": "io.memory_dataset.MemoryDataSet",
+      "stats": null
+    },
+    {
+      "id": "981c9c11",
+      "name": "jan.output_data",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "jan"
+      ],
+      "layer": null,
+      "dataset_type": "io.memory_dataset.MemoryDataSet",
+      "stats": null
+    },
+    {
+      "id": "72daef46",
+      "name": "make_monthly_predictions",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "task",
+      "modular_pipelines": [
+        "mar"
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "58d9ba9f",
+      "name": "mar.input_data",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "mar"
+      ],
+      "layer": null,
+      "dataset_type": "io.memory_dataset.MemoryDataSet",
+      "stats": null
+    },
+    {
+      "id": "39bb52ed",
+      "name": "mar.output_data",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "data",
+      "modular_pipelines": [
+        "mar"
+      ],
+      "layer": null,
+      "dataset_type": "io.memory_dataset.MemoryDataSet",
+      "stats": null
+    },
+    {
+      "id": "feb",
+      "name": "feb",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "jan",
+      "name": "jan",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    },
+    {
+      "id": "mar",
+      "name": "mar",
+      "tags": [],
+      "pipelines": [
+        "default"
+      ],
+      "type": "modularPipeline",
+      "modular_pipelines": null,
+      "layer": null,
+      "dataset_type": null,
+      "stats": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "feb",
+      "target": "bcbc1f66"
+    },
+    {
+      "source": "mar",
+      "target": "39bb52ed"
+    },
+    {
+      "source": "9000ffea",
+      "target": "28e0515d"
+    },
+    {
+      "source": "9000ffea",
+      "target": "feb"
+    },
+    {
+      "source": "df6a1647",
+      "target": "981c9c11"
+    },
+    {
+      "source": "58d9ba9f",
+      "target": "mar"
+    },
+    {
+      "source": "28e0515d",
+      "target": "bcbc1f66"
+    },
+    {
+      "source": "0ce7b0b7",
+      "target": "df6a1647"
+    },
+    {
+      "source": "0ce7b0b7",
+      "target": "jan"
+    },
+    {
+      "source": "72daef46",
+      "target": "39bb52ed"
+    },
+    {
+      "source": "jan",
+      "target": "981c9c11"
+    },
+    {
+      "source": "58d9ba9f",
+      "target": "72daef46"
+    }
+  ],
+  "layers": [],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "default",
+      "name": "default"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "jan",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "mar",
+          "type": "modularPipeline"
+        },
+        {
+          "id": "feb",
+          "type": "modularPipeline"
+        }
+      ]
+    },
+    "feb": {
+      "id": "feb",
+      "name": "feb",
+      "inputs": [
+        "9000ffea"
+      ],
+      "outputs": [
+        "bcbc1f66"
+      ],
+      "children": [
+        {
+          "id": "9000ffea",
+          "type": "data"
+        },
+        {
+          "id": "bcbc1f66",
+          "type": "data"
+        },
+        {
+          "id": "28e0515d",
+          "type": "task"
+        }
+      ]
+    },
+    "jan": {
+      "id": "jan",
+      "name": "jan",
+      "inputs": [
+        "0ce7b0b7"
+      ],
+      "outputs": [
+        "981c9c11"
+      ],
+      "children": [
+        {
+          "id": "0ce7b0b7",
+          "type": "data"
+        },
+        {
+          "id": "981c9c11",
+          "type": "data"
+        },
+        {
+          "id": "df6a1647",
+          "type": "task"
+        }
+      ]
+    },
+    "mar": {
+      "id": "mar",
+      "name": "mar",
+      "inputs": [
+        "58d9ba9f"
+      ],
+      "outputs": [
+        "39bb52ed"
+      ],
+      "children": [
+        {
+          "id": "39bb52ed",
+          "type": "data"
+        },
+        {
+          "id": "58d9ba9f",
+          "type": "data"
+        },
+        {
+          "id": "72daef46",
+          "type": "task"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "default"
+}
